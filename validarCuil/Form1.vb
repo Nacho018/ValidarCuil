@@ -38,7 +38,10 @@ Public Class Form1
 
 
 
-        TextBox1.Text = "30"
+        TextBox1.Text = "30-"
+        TextBox1.SelectionStart = TextBox1.Text.Length
+
+
 
         TextBox1.Focus()
 
@@ -66,8 +69,8 @@ Public Class Form1
         End If
 
 
-        TextBox1.Text = "20"
-
+        TextBox1.Text = "20-"
+        TextBox1.SelectionStart = TextBox1.Text.Length
         TextBox1.Focus()
 
 
@@ -84,8 +87,8 @@ Public Class Form1
 
         End If
 
-        TextBox1.Text = "27"
-
+        TextBox1.Text = "27-"
+        TextBox1.SelectionStart = TextBox1.Text.Length
         TextBox1.Focus()
 
 
@@ -93,4 +96,31 @@ Public Class Form1
     End Sub
 
 
+    Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
+
+        Dim Ponderador As Integer
+        Dim Acumulado As Integer
+        Dim Digito As Integer
+        Dim Posicion As Integer
+        Dim cuit As String = TextBox1.Text.Substring(0, 2) + TextBox1.Text.Substring(3)
+
+
+        Ponderador = 2
+        Acumulado = 0
+
+        'Recorro la cadena de atrás para adelante
+        For Posicion = 10 To 1 Step -1
+            'Sumo las multiplicaciones de cada dígito x su ponderador
+            Acumulado = Acumulado + CInt(cuit.Substring(Posicion - 1, 1)) * Ponderador
+            Ponderador = Ponderador + 1
+
+            If Ponderador > 7 Then Ponderador = 2
+        Next
+
+        Digito = 11 - (Acumulado Mod 11)
+        If Digito = 11 Then Digito = 0
+        TextBox1.Text = TextBox1.Text + "-" + CStr(Digito)
+
+
+    End Sub
 End Class
