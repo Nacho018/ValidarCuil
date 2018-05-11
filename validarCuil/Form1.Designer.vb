@@ -30,9 +30,9 @@ Partial Class Form1
         Me.personafisica = New System.Windows.Forms.RadioButton
         Me.personajuridica = New System.Windows.Forms.RadioButton
         Me.persona = New System.Windows.Forms.GroupBox
-        Me.sexo = New System.Windows.Forms.GroupBox
+        Me.genero = New System.Windows.Forms.GroupBox
         Me.persona.SuspendLayout()
-        Me.sexo.SuspendLayout()
+        Me.genero.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -118,23 +118,23 @@ Partial Class Form1
         Me.persona.TabStop = False
         Me.persona.Text = "persona"
         '
-        'sexo
+        'genero
         '
-        Me.sexo.Controls.Add(Me.mujer)
-        Me.sexo.Controls.Add(Me.hombre)
-        Me.sexo.Location = New System.Drawing.Point(247, 23)
-        Me.sexo.Name = "sexo"
-        Me.sexo.Size = New System.Drawing.Size(116, 143)
-        Me.sexo.TabIndex = 8
-        Me.sexo.TabStop = False
-        Me.sexo.Text = "sexo"
+        Me.genero.Controls.Add(Me.mujer)
+        Me.genero.Controls.Add(Me.hombre)
+        Me.genero.Location = New System.Drawing.Point(247, 23)
+        Me.genero.Name = "genero"
+        Me.genero.Size = New System.Drawing.Size(116, 143)
+        Me.genero.TabIndex = 8
+        Me.genero.TabStop = False
+        Me.genero.Text = "genero"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(440, 400)
-        Me.Controls.Add(Me.sexo)
+        Me.Controls.Add(Me.genero)
         Me.Controls.Add(Me.persona)
         Me.Controls.Add(Me.aceptar)
         Me.Controls.Add(Me.Label1)
@@ -143,8 +143,8 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.persona.ResumeLayout(False)
         Me.persona.PerformLayout()
-        Me.sexo.ResumeLayout(False)
-        Me.sexo.PerformLayout()
+        Me.genero.ResumeLayout(False)
+        Me.genero.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -157,6 +157,6 @@ Partial Class Form1
     Friend WithEvents personafisica As System.Windows.Forms.RadioButton
     Friend WithEvents personajuridica As System.Windows.Forms.RadioButton
     Friend WithEvents persona As System.Windows.Forms.GroupBox
-    Friend WithEvents sexo As System.Windows.Forms.GroupBox
+    Friend WithEvents genero As System.Windows.Forms.GroupBox
 
 End Class

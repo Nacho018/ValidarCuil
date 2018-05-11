@@ -97,7 +97,9 @@ Public Class Form1
 
 
     Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
-
+        If TextBox1.Text.Length = 13 Then
+            Exit Sub
+        End If
         Dim Ponderador As Integer
         Dim Acumulado As Integer
         Dim Digito As Integer
@@ -119,8 +121,31 @@ Public Class Form1
 
         Digito = 11 - (Acumulado Mod 11)
         If Digito = 11 Then Digito = 0
+
+
+        If Digito = 10 Then
+
+            If personafisica.Checked Then
+
+                TextBox1.Text = "23" + TextBox1.Text.Substring(2)
+
+
+            Else
+
+
+                TextBox1.Text = "33" + TextBox1.Text.Substring(2)
+
+            End If
+
+            Call aceptar_Click(sender, e)
+
+            Exit Sub
+        End If
+
+       
+
         TextBox1.Text = TextBox1.Text + "-" + CStr(Digito)
 
-
+      
     End Sub
 End Class
